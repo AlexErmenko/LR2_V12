@@ -47,6 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomComboControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomComboControl.Designer.cs">
+      <DependentUpon>CustomComboControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="SubjectControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -63,6 +69,9 @@
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="CustomComboControl.resx">
+      <DependentUpon>CustomComboControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SubjectControl.resx">
       <DependentUpon>SubjectControl.cs</DependentUpon>
     </EmbeddedResource>

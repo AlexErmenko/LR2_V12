@@ -29,45 +29,60 @@ namespace WindowsFormsApp1
         /// </summary>
         private void InitializeComponent()
         {
-            this.subjectControl1 = new InstituteDepartment.UI.CustomDataControlls.SubjectControl();
-            this.teacherControl1 = new InstituteDepartment.UI.CustomDataControlls.TeacherControl();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.налаштуванняToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.customComboControl1 = new InstituteDepartment.UI.CustomDataControlls.CustomComboControl();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // subjectControl1
+            // menuStrip1
             // 
-            this.subjectControl1.AutoSize = true;
-            this.subjectControl1.Location = new System.Drawing.Point(23, 343);
-            this.subjectControl1.Name = "subjectControl1";
-            this.subjectControl1.Size = new System.Drawing.Size(1279, 335);
-            this.subjectControl1.TabIndex = 0;
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.налаштуванняToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1014, 30);
+            this.menuStrip1.TabIndex = 2;
+            this.menuStrip1.Text = "menuStrip1";
             // 
-            // teacherControl1
+            // налаштуванняToolStripMenuItem
             // 
-            this.teacherControl1.AutoSize = true;
-            this.teacherControl1.Location = new System.Drawing.Point(66, 64);
-            this.teacherControl1.Name = "teacherControl1";
-            this.teacherControl1.Size = new System.Drawing.Size(862, 226);
-            this.teacherControl1.TabIndex = 1;
+            this.налаштуванняToolStripMenuItem.Name = "налаштуванняToolStripMenuItem";
+            this.налаштуванняToolStripMenuItem.Size = new System.Drawing.Size(125, 24);
+            this.налаштуванняToolStripMenuItem.Text = "Налаштування";
+            this.налаштуванняToolStripMenuItem.Click += new System.EventHandler(this.НалаштуванняToolStripMenuItem_Click);
+            // 
+            // customComboControl1
+            // 
+            this.customComboControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.customComboControl1.Location = new System.Drawing.Point(0, 30);
+            this.customComboControl1.Name = "customComboControl1";
+            this.customComboControl1.Size = new System.Drawing.Size(1014, 483);
+            this.customComboControl1.TabIndex = 3;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1440, 717);
-            this.Controls.Add(this.teacherControl1);
-            this.Controls.Add(this.subjectControl1);
+            this.ClientSize = new System.Drawing.Size(1014, 513);
+            this.Controls.Add(this.customComboControl1);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private InstituteDepartment.UI.CustomDataControlls.SubjectControl subjectControl1;
-        private InstituteDepartment.UI.CustomDataControlls.TeacherControl teacherControl1;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem налаштуванняToolStripMenuItem;
+        private InstituteDepartment.UI.CustomDataControlls.CustomComboControl customComboControl1;
     }
 }
 

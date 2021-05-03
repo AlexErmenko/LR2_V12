@@ -7,19 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using InstituteDepartment.UI.CustomDataControlls;
+
 namespace WindowsFormsApp1
 {
-    public partial class Form1 : Form
+    public partial class MainSettings : Form
     {
-        public Form1()
+        public MainSettings()
         {
             InitializeComponent();
-        }
-
-        private void НалаштуванняToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            new MainSettings().ShowDialog();
         }
     }
 }
