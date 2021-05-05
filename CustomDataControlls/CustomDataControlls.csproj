@@ -102,6 +102,7 @@
     <None Include="Properties\DataSources\InstituteDepartment.Domain.EnumerableTypes.SubjectList.datasource" />
     <None Include="Properties\DataSources\InstituteDepartment.Domain.EnumerableTypes.TeacherList.datasource" />
     <None Include="Properties\DataSources\InstituteDepartment.Domain.EnumerableTypes.TeachersSubjectsList.datasource" />
+    <None Include="Properties\DataSources\InstituteDepartment.Domain.EnumerableTypes.TimeTable.datasource" />
     <None Include="Properties\DataSources\InstituteDepartment.Domain.Helpers.AcademicDegree.datasource" />
     <None Include="Properties\DataSources\InstituteDepartment.Domain.Helpers.Position.datasource" />
     <None Include="Properties\DataSources\InstituteDepartment.Domain.Helpers.TypeLesson.datasource" />

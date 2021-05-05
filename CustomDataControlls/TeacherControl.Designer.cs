@@ -34,6 +34,7 @@ namespace InstituteDepartment.UI.CustomDataControlls
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.teacherListBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.teacherListBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -46,21 +47,20 @@ namespace InstituteDepartment.UI.CustomDataControlls
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.teacherListBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.teacherListDataGridView = new System.Windows.Forms.DataGridView();
-            this.academicDegreesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.positionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.academicDegreesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.teacherListBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.positionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.teacherListBindingNavigator)).BeginInit();
             this.teacherListBindingNavigator.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.teacherListBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.teacherListDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.academicDegreesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.positionsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.teacherListBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // teacherListBindingNavigator
@@ -104,11 +104,15 @@ namespace InstituteDepartment.UI.CustomDataControlls
             this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(29, 24);
             this.bindingNavigatorAddNewItem.Text = "Add new";
             // 
+            // teacherListBindingSource
+            // 
+            this.teacherListBindingSource.DataSource = typeof(InstituteDepartment.Domain.EnumerableTypes.TeacherList);
+            // 
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(45, 24);
-            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(55, 24);
+            this.bindingNavigatorCountItem.Text = "для {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
             // 
             // bindingNavigatorDeleteItem
@@ -147,7 +151,6 @@ namespace InstituteDepartment.UI.CustomDataControlls
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 27);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -219,18 +222,6 @@ namespace InstituteDepartment.UI.CustomDataControlls
             this.teacherListDataGridView.TabIndex = 1;
             this.teacherListDataGridView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.TeacherListDataGridView_DataError);
             // 
-            // academicDegreesBindingSource
-            // 
-            this.academicDegreesBindingSource.AllowNew = false;
-            this.academicDegreesBindingSource.DataMember = "AcademicDegrees";
-            this.academicDegreesBindingSource.DataSource = this.teacherListBindingSource;
-            // 
-            // positionsBindingSource
-            // 
-            this.positionsBindingSource.AllowNew = false;
-            this.positionsBindingSource.DataMember = "Positions";
-            this.positionsBindingSource.DataSource = this.teacherListBindingSource;
-            // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "TeacherNumber";
@@ -272,6 +263,12 @@ namespace InstituteDepartment.UI.CustomDataControlls
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             this.dataGridViewTextBoxColumn5.Width = 125;
             // 
+            // academicDegreesBindingSource
+            // 
+            this.academicDegreesBindingSource.AllowNew = false;
+            this.academicDegreesBindingSource.DataMember = "AcademicDegrees";
+            this.academicDegreesBindingSource.DataSource = this.teacherListBindingSource;
+            // 
             // dataGridViewTextBoxColumn6
             // 
             this.dataGridViewTextBoxColumn6.DataPropertyName = "CurrentPosition";
@@ -281,9 +278,11 @@ namespace InstituteDepartment.UI.CustomDataControlls
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             this.dataGridViewTextBoxColumn6.Width = 110;
             // 
-            // teacherListBindingSource
+            // positionsBindingSource
             // 
-            this.teacherListBindingSource.DataSource = typeof(InstituteDepartment.Domain.EnumerableTypes.TeacherList);
+            this.positionsBindingSource.AllowNew = false;
+            this.positionsBindingSource.DataMember = "Positions";
+            this.positionsBindingSource.DataSource = this.teacherListBindingSource;
             // 
             // TeacherControl
             // 
@@ -297,19 +296,16 @@ namespace InstituteDepartment.UI.CustomDataControlls
             ((System.ComponentModel.ISupportInitialize)(this.teacherListBindingNavigator)).EndInit();
             this.teacherListBindingNavigator.ResumeLayout(false);
             this.teacherListBindingNavigator.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.teacherListBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.teacherListDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.academicDegreesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.positionsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.teacherListBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.BindingSource teacherListBindingSource;
-        private System.Windows.Forms.BindingNavigator teacherListBindingNavigator;
         private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
@@ -331,5 +327,7 @@ namespace InstituteDepartment.UI.CustomDataControlls
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn6;
+        public System.Windows.Forms.BindingSource teacherListBindingSource;
+        public System.Windows.Forms.BindingNavigator teacherListBindingNavigator;
     }
 }

@@ -15,6 +15,21 @@ namespace InstituteDepartment.UI.CustomDataControlls
         public TeachersSubjectsControl()
         {
             InitializeComponent();
+
+
+            dataGridViewTextBoxColumn1.ValueMember = "TeacherNumber";
+            dataGridViewTextBoxColumn1.DisplayMember = "TeacherNumber";
+
+
+
+            dataGridViewTextBoxColumn2.DisplayMember = "SubjectNumber";
+            dataGridViewTextBoxColumn2.ValueMember = "SubjectNumber";
+
+        }
+
+        private void TeachersSubjectsListDataGridView_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+
         }
     }
 }

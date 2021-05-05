@@ -282,9 +282,6 @@ namespace InstituteDepartment.UI.CustomDataControlls
         }
 
         #endregion
-
-        private System.Windows.Forms.BindingSource subjectListBindingSource;
-        private System.Windows.Forms.BindingNavigator subjectListBindingNavigator;
         private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
@@ -305,5 +302,7 @@ namespace InstituteDepartment.UI.CustomDataControlls
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        public System.Windows.Forms.BindingSource subjectListBindingSource;
+        public System.Windows.Forms.BindingNavigator subjectListBindingNavigator;
     }
 }

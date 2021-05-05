@@ -10,7 +10,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomDataControlls", "Cust
 		{0A2B9923-92E7-438C-B07F-C480AC5AEB6E} = {0A2B9923-92E7-438C-B07F-C480AC5AEB6E}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApp1", "WindowsFormsApp1\WindowsFormsApp1.csproj", "{21C9308F-FE12-4F73-BD6D-6F459B7090AA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MainUI", "WindowsFormsApp1\MainUI.csproj", "{21C9308F-FE12-4F73-BD6D-6F459B7090AA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -29,17 +29,20 @@ namespace InstituteDepartment.UI.CustomDataControlls
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.GroupViewSubhectComponent = new InstituteDepartment.UI.CustomDataControlls.SubjectControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.GroupTeacherComponent = new InstituteDepartment.UI.CustomDataControlls.TeacherControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.subjectControl1 = new InstituteDepartment.UI.CustomDataControlls.SubjectControl();
-            this.teacherControl1 = new InstituteDepartment.UI.CustomDataControlls.TeacherControl();
-            this.teachersSubjectsControl1 = new InstituteDepartment.UI.CustomDataControlls.TeachersSubjectsControl();
+            this.TeacherSubjectsComponent = new InstituteDepartment.UI.CustomDataControlls.TeachersSubjectsControl();
+            this.timeTableBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.timeTableBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -56,7 +59,7 @@ namespace InstituteDepartment.UI.CustomDataControlls
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.subjectControl1);
+            this.tabPage1.Controls.Add(this.GroupViewSubhectComponent);
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -65,9 +68,18 @@ namespace InstituteDepartment.UI.CustomDataControlls
             this.tabPage1.Text = "Предмети";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // GroupViewSubhectComponent
+            // 
+            this.GroupViewSubhectComponent.AutoSize = true;
+            this.GroupViewSubhectComponent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.GroupViewSubhectComponent.Location = new System.Drawing.Point(3, 3);
+            this.GroupViewSubhectComponent.Name = "GroupViewSubhectComponent";
+            this.GroupViewSubhectComponent.Size = new System.Drawing.Size(791, 322);
+            this.GroupViewSubhectComponent.TabIndex = 0;
+            // 
             // tabPage2
             // 
-            this.tabPage2.Controls.Add(this.teacherControl1);
+            this.tabPage2.Controls.Add(this.GroupTeacherComponent);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -76,9 +88,18 @@ namespace InstituteDepartment.UI.CustomDataControlls
             this.tabPage2.Text = "Викладачи";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // GroupTeacherComponent
+            // 
+            this.GroupTeacherComponent.AutoSize = true;
+            this.GroupTeacherComponent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.GroupTeacherComponent.Location = new System.Drawing.Point(3, 3);
+            this.GroupTeacherComponent.Name = "GroupTeacherComponent";
+            this.GroupTeacherComponent.Size = new System.Drawing.Size(791, 322);
+            this.GroupTeacherComponent.TabIndex = 0;
+            // 
             // tabPage3
             // 
-            this.tabPage3.Controls.Add(this.teachersSubjectsControl1);
+            this.tabPage3.Controls.Add(this.TeacherSubjectsComponent);
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
@@ -87,40 +108,27 @@ namespace InstituteDepartment.UI.CustomDataControlls
             this.tabPage3.Text = "Викладачи та Предметы";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // subjectControl1
+            // TeacherSubjectsComponent
             // 
-            this.subjectControl1.AutoSize = true;
-            this.subjectControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.subjectControl1.Location = new System.Drawing.Point(3, 3);
-            this.subjectControl1.Name = "subjectControl1";
-            this.subjectControl1.Size = new System.Drawing.Size(791, 322);
-            this.subjectControl1.TabIndex = 0;
+            this.TeacherSubjectsComponent.AutoSize = true;
+            this.TeacherSubjectsComponent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.TeacherSubjectsComponent.Location = new System.Drawing.Point(3, 3);
+            this.TeacherSubjectsComponent.Name = "TeacherSubjectsComponent";
+            this.TeacherSubjectsComponent.Size = new System.Drawing.Size(791, 322);
+            this.TeacherSubjectsComponent.TabIndex = 0;
             // 
-            // teacherControl1
+            // timeTableBindingSource
             // 
-            this.teacherControl1.AutoSize = true;
-            this.teacherControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.teacherControl1.Location = new System.Drawing.Point(3, 3);
-            this.teacherControl1.Name = "teacherControl1";
-            this.teacherControl1.Size = new System.Drawing.Size(791, 322);
-            this.teacherControl1.TabIndex = 0;
-            // 
-            // teachersSubjectsControl1
-            // 
-            this.teachersSubjectsControl1.AutoSize = true;
-            this.teachersSubjectsControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.teachersSubjectsControl1.Location = new System.Drawing.Point(3, 3);
-            this.teachersSubjectsControl1.Name = "teachersSubjectsControl1";
-            this.teachersSubjectsControl1.Size = new System.Drawing.Size(791, 322);
-            this.teachersSubjectsControl1.TabIndex = 0;
+            this.timeTableBindingSource.DataSource = typeof(InstituteDepartment.Domain.EnumerableTypes.TimeTable);
             // 
             // CustomComboControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.Controls.Add(this.tabControl1);
             this.Name = "CustomComboControl";
             this.Size = new System.Drawing.Size(805, 357);
+            this.Load += new System.EventHandler(this.CustomComboControl_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -128,6 +136,7 @@ namespace InstituteDepartment.UI.CustomDataControlls
             this.tabPage2.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.timeTableBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -137,9 +146,10 @@ namespace InstituteDepartment.UI.CustomDataControlls
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
-        private TeacherControl teacherControl1;
-        private SubjectControl subjectControl1;
+        private TeacherControl GroupTeacherComponent;
+        private SubjectControl GroupViewSubhectComponent;
         private System.Windows.Forms.TabPage tabPage3;
-        private TeachersSubjectsControl teachersSubjectsControl1;
+        private TeachersSubjectsControl TeacherSubjectsComponent;
+        public System.Windows.Forms.BindingSource timeTableBindingSource;
     }
 }

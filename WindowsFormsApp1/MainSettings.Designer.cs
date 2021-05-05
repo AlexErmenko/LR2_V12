@@ -30,8 +30,8 @@ namespace WindowsFormsApp1
         private void InitializeComponent()
         {
             this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // checkBox3
@@ -39,29 +39,16 @@ namespace WindowsFormsApp1
             this.checkBox3.Checked = global::WindowsFormsApp1.Properties.Settings.Default.AllowCascadeDelete;
             this.checkBox3.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::WindowsFormsApp1.Properties.Settings.Default, "AllowCascadeDelete", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.checkBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.checkBox3.Location = new System.Drawing.Point(6, 183);
+            this.checkBox3.Location = new System.Drawing.Point(6, 82);
             this.checkBox3.Name = "checkBox3";
             this.checkBox3.Size = new System.Drawing.Size(401, 72);
             this.checkBox3.TabIndex = 2;
             this.checkBox3.Text = "Дозвіл каскадного видалення";
             this.checkBox3.UseVisualStyleBackColor = true;
             // 
-            // checkBox2
-            // 
-            this.checkBox2.Checked = global::WindowsFormsApp1.Properties.Settings.Default.BlockingRemoveRecord;
-            this.checkBox2.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::WindowsFormsApp1.Properties.Settings.Default, "BlockingRemoveRecord", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
-            this.checkBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.checkBox2.Location = new System.Drawing.Point(6, 82);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(432, 77);
-            this.checkBox2.TabIndex = 1;
-            this.checkBox2.Text = "Блокування видалення записів таблиць даних, на які посилаються інші записи предме" +
-    "тної області.";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            // 
             // checkBox1
             // 
-            this.checkBox1.Checked = global::WindowsFormsApp1.Properties.Settings.Default.ManagePermission;
+            this.checkBox1.Checked = global::WindowsFormsApp1.Properties.Settings.Default.AllowReferenceToReferenceRelation;
             this.checkBox1.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::WindowsFormsApp1.Properties.Settings.Default, "ManagePermission", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.checkBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.checkBox1.Location = new System.Drawing.Point(6, -1);
@@ -72,13 +59,23 @@ namespace WindowsFormsApp1
     " предметної області.";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(90, 160);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(233, 53);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "ОК";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // MainSettings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(450, 266);
+            this.ClientSize = new System.Drawing.Size(413, 224);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.checkBox3);
-            this.Controls.Add(this.checkBox2);
             this.Controls.Add(this.checkBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "MainSettings";
@@ -91,7 +88,7 @@ namespace WindowsFormsApp1
         #endregion
 
         private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.CheckBox checkBox3;
+        private System.Windows.Forms.Button button1;
     }
 }

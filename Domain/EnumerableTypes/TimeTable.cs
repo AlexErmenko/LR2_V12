@@ -1,7 +1,9 @@
-﻿using InstituteDepartment.Domain.Main;
+﻿using System;
+using InstituteDepartment.Domain.Main;
 
 namespace InstituteDepartment.Domain.EnumerableTypes
 {
+    [Serializable]
     public class TimeTable
     {
         public TeacherList TeacherList { get; set; }

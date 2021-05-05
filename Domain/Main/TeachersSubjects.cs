@@ -12,10 +12,11 @@ namespace InstituteDepartment.Domain.Main
         [DisplayName("Преподаватель")]
         public Guid IdTeacher { get; set; }
 
+
         [DisplayName("Предмет")]
         public Guid IdSubject { get; set; }
 
-        
+
         public TeacherList TeacherList { get; set; }
 
         public SubjectList SubjectList { get; set; }
