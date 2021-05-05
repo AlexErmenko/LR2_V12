@@ -1,7 +1,7 @@
 ﻿
 namespace WindowsFormsApp1
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         /// Обязательная переменная конструктора.
@@ -42,7 +42,7 @@ namespace WindowsFormsApp1
             this.налаштуванняToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1014, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(1014, 28);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -56,22 +56,24 @@ namespace WindowsFormsApp1
             // customComboControl1
             // 
             this.customComboControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.customComboControl1.Location = new System.Drawing.Point(0, 30);
+            this.customComboControl1.Location = new System.Drawing.Point(0, 28);
             this.customComboControl1.Name = "customComboControl1";
-            this.customComboControl1.Size = new System.Drawing.Size(1014, 483);
+            this.customComboControl1.Size = new System.Drawing.Size(1014, 485);
             this.customComboControl1.TabIndex = 3;
             // 
-            // Form1
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1014, 513);
             this.Controls.Add(this.customComboControl1);
             this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "MainForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Главное окно";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

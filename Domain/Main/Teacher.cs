@@ -28,7 +28,7 @@ namespace InstituteDepartment.Domain.Main
         [DisplayName("Отчество")]
         public string LastName { get; set; }
 
-        public List<AcademicDegree> AcademicDegrees { get; set; } = new()
+        public BindingList<AcademicDegree> AcademicDegrees { get; set; } = new()
         {
             new AcademicDegree(1,
                 "отсут."),

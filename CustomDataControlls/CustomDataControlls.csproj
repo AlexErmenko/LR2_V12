@@ -66,6 +66,12 @@
     <Compile Include="TeacherControl.Designer.cs">
       <DependentUpon>TeacherControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="TeachersSubjectsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TeachersSubjectsControl.Designer.cs">
+      <DependentUpon>TeachersSubjectsControl.cs</DependentUpon>
+    </Compile>
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
   <ItemGroup>
@@ -77,6 +83,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TeacherControl.resx">
       <DependentUpon>TeacherControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TeachersSubjectsControl.resx">
+      <DependentUpon>TeachersSubjectsControl.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -92,6 +101,7 @@
   <ItemGroup>
     <None Include="Properties\DataSources\InstituteDepartment.Domain.EnumerableTypes.SubjectList.datasource" />
     <None Include="Properties\DataSources\InstituteDepartment.Domain.EnumerableTypes.TeacherList.datasource" />
+    <None Include="Properties\DataSources\InstituteDepartment.Domain.EnumerableTypes.TeachersSubjectsList.datasource" />
     <None Include="Properties\DataSources\InstituteDepartment.Domain.Helpers.AcademicDegree.datasource" />
     <None Include="Properties\DataSources\InstituteDepartment.Domain.Helpers.Position.datasource" />
     <None Include="Properties\DataSources\InstituteDepartment.Domain.Helpers.TypeLesson.datasource" />

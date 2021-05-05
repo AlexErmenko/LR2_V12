@@ -86,7 +86,7 @@ namespace InstituteDepartment.UI.CustomDataControlls
             this.subjectListBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.subjectListBindingNavigator.Name = "subjectListBindingNavigator";
             this.subjectListBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.subjectListBindingNavigator.Size = new System.Drawing.Size(1277, 31);
+            this.subjectListBindingNavigator.Size = new System.Drawing.Size(1280, 27);
             this.subjectListBindingNavigator.TabIndex = 0;
             this.subjectListBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -96,14 +96,14 @@ namespace InstituteDepartment.UI.CustomDataControlls
             this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
             this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(29, 28);
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(29, 24);
             this.bindingNavigatorAddNewItem.Text = "Add new";
             // 
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(45, 28);
-            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(55, 24);
+            this.bindingNavigatorCountItem.Text = "для {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
             // 
             // bindingNavigatorDeleteItem
@@ -112,7 +112,7 @@ namespace InstituteDepartment.UI.CustomDataControlls
             this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
             this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(29, 28);
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(29, 24);
             this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
             // bindingNavigatorMoveFirstItem
@@ -121,7 +121,7 @@ namespace InstituteDepartment.UI.CustomDataControlls
             this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
             this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
             this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(29, 28);
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(29, 24);
             this.bindingNavigatorMoveFirstItem.Text = "Move first";
             // 
             // bindingNavigatorMovePreviousItem
@@ -130,13 +130,13 @@ namespace InstituteDepartment.UI.CustomDataControlls
             this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
             this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
             this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(29, 28);
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(29, 24);
             this.bindingNavigatorMovePreviousItem.Text = "Move previous";
             // 
             // bindingNavigatorSeparator
             // 
             this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 31);
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 27);
             // 
             // bindingNavigatorPositionItem
             // 
@@ -151,7 +151,7 @@ namespace InstituteDepartment.UI.CustomDataControlls
             // bindingNavigatorSeparator1
             // 
             this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 31);
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 27);
             // 
             // bindingNavigatorMoveNextItem
             // 
@@ -159,7 +159,7 @@ namespace InstituteDepartment.UI.CustomDataControlls
             this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(29, 28);
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(29, 24);
             this.bindingNavigatorMoveNextItem.Text = "Move next";
             // 
             // bindingNavigatorMoveLastItem
@@ -168,27 +168,30 @@ namespace InstituteDepartment.UI.CustomDataControlls
             this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(29, 28);
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(29, 24);
             this.bindingNavigatorMoveLastItem.Text = "Move last";
             // 
             // bindingNavigatorSeparator2
             // 
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 31);
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 27);
             // 
             // subjectListBindingNavigatorSaveItem
             // 
             this.subjectListBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.subjectListBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("subjectListBindingNavigatorSaveItem.Image")));
             this.subjectListBindingNavigatorSaveItem.Name = "subjectListBindingNavigatorSaveItem";
-            this.subjectListBindingNavigatorSaveItem.Size = new System.Drawing.Size(29, 28);
+            this.subjectListBindingNavigatorSaveItem.Size = new System.Drawing.Size(29, 24);
             this.subjectListBindingNavigatorSaveItem.Text = "Save Data";
             // 
             // subjectListDataGridView
             // 
             this.subjectListDataGridView.AllowUserToAddRows = false;
+            this.subjectListDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.subjectListDataGridView.AutoGenerateColumns = false;
-            this.subjectListDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.subjectListDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.subjectListDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.subjectListDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -199,7 +202,6 @@ namespace InstituteDepartment.UI.CustomDataControlls
             this.dataGridViewTextBoxColumn6,
             this.dataGridViewTextBoxColumn7});
             this.subjectListDataGridView.DataSource = this.subjectListBindingSource;
-            this.subjectListDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.subjectListDataGridView.Location = new System.Drawing.Point(0, 31);
             this.subjectListDataGridView.Name = "subjectListDataGridView";
             this.subjectListDataGridView.RowHeadersWidth = 51;
@@ -213,7 +215,6 @@ namespace InstituteDepartment.UI.CustomDataControlls
             this.dataGridViewTextBoxColumn1.HeaderText = "Кол-во часов для лабораторных работ";
             this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 232;
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -221,7 +222,6 @@ namespace InstituteDepartment.UI.CustomDataControlls
             this.dataGridViewTextBoxColumn2.HeaderText = "Кол-во лекционных часов";
             this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.Width = 189;
             // 
             // dataGridViewTextBoxColumn3
             // 
@@ -229,7 +229,6 @@ namespace InstituteDepartment.UI.CustomDataControlls
             this.dataGridViewTextBoxColumn3.HeaderText = "Кол-во часов для практических занятий";
             this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.Width = 227;
             // 
             // dataGridViewTextBoxColumn4
             // 
@@ -237,7 +236,6 @@ namespace InstituteDepartment.UI.CustomDataControlls
             this.dataGridViewTextBoxColumn4.HeaderText = "Номер семестра";
             this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.Width = 134;
             // 
             // dataGridViewTextBoxColumn5
             // 
@@ -245,7 +243,6 @@ namespace InstituteDepartment.UI.CustomDataControlls
             this.dataGridViewTextBoxColumn5.HeaderText = "Код специальности";
             this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.Width = 152;
             // 
             // dataGridViewTextBoxColumn6
             // 
@@ -253,7 +250,6 @@ namespace InstituteDepartment.UI.CustomDataControlls
             this.dataGridViewTextBoxColumn6.HeaderText = "Название предмета";
             this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.Width = 154;
             // 
             // dataGridViewTextBoxColumn7
             // 
@@ -261,7 +257,6 @@ namespace InstituteDepartment.UI.CustomDataControlls
             this.dataGridViewTextBoxColumn7.HeaderText = "Номер предмета";
             this.dataGridViewTextBoxColumn7.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.Width = 136;
             // 
             // subjectListBindingSource
             // 
@@ -275,7 +270,7 @@ namespace InstituteDepartment.UI.CustomDataControlls
             this.Controls.Add(this.subjectListDataGridView);
             this.Controls.Add(this.subjectListBindingNavigator);
             this.Name = "SubjectControl";
-            this.Size = new System.Drawing.Size(1277, 333);
+            this.Size = new System.Drawing.Size(1280, 336);
             ((System.ComponentModel.ISupportInitialize)(this.subjectListBindingNavigator)).EndInit();
             this.subjectListBindingNavigator.ResumeLayout(false);
             this.subjectListBindingNavigator.PerformLayout();

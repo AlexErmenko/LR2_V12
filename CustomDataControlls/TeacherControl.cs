@@ -26,8 +26,6 @@ namespace InstituteDepartment.UI.CustomDataControlls
 
         private void TeacherListDataGridView_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {
-            var rowIndex = e.RowIndex;
-            var eColumnIndex = e.ColumnIndex;
 
         }
     }
