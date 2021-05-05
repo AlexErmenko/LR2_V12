@@ -14,10 +14,7 @@ namespace InstituteDepartment.UI.CustomDataControlls
 {
     public partial class CustomComboControl : UserControl
     {
-
-
         public ApplicationSettingsBase Setting { get; set; }
-
 
 
         public CustomComboControl()
@@ -30,27 +27,28 @@ namespace InstituteDepartment.UI.CustomDataControlls
             //Привязали предметы
             GroupViewSubhectComponent.subjectListBindingSource.DataSource = table.SubjectList;
 
-                                //Привязали препода
+            //Привязали препода
             GroupTeacherComponent.teacherListBindingSource.DataSource = table.TeacherList;
 
 
-                                                                                   //Связали вместе 
-            TeacherSubjectsComponent.teachersSubjectsListBindingSource.DataSource = table.TeachersSubjects;
+            //Связали вместе 
+            teachersSubjectsControl1
+                    .teachersSubjectsListBindingSource
+                    .DataSource =
+                table.TeachersSubjects;
+
+            teachersSubjectsControl1.teacherListBindingSource.DataSource = table.TeacherList;
+
+
+
+            teachersSubjectsControl1.subjectListBindingSource.DataSource = table.SubjectList;
 
             //Control -> Binding Source Custom Control -> Data Source = 
             // TeacherSubjectsComponent.teacherListBindingSource.DataSource = table.TeachersSubjects;
-            // TeacherSubjectsComponent.teacherListBindingSource.DataSource = table.TeacherList;
-
-
-
-
         }
 
         private void CustomComboControl_Load(object sender, EventArgs e)
         {
-
-
-
         }
     }
 }

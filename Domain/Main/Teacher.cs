@@ -59,9 +59,10 @@ namespace InstituteDepartment.Domain.Main
         [DisplayName("Учёная степень")]
         public int CurrentAcademicDegree { get; set; }
 
+        /*
         public override string ToString()
         {
             return $"{MiddleName} {FirstName?[0]}.{LastName?[0]}.";
-        }
+        }*/
     }
 }
