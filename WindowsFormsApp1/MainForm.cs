@@ -1,13 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using InstituteDepartment.UI.CustomDataControlls;
+using WindowsFormsApp1.Properties;
 
 namespace WindowsFormsApp1
 {
@@ -20,12 +13,42 @@ namespace WindowsFormsApp1
 
         private void НалаштуванняToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new MainSettings().ShowDialog();
+            var mainSettings = new MainSettings();
+            mainSettings.FormClosed += MainSettings_FormClosed;
+            mainSettings.ShowDialog();
+        }
+
+        private void MainSettings_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Refresh();
+            CustomTabControl.timeTableBindingSource.ResetBindings(false);
+
+
+            #region CascadeDelete
+
+            CustomTabControl.GroupTeacherSubj.teachersSubjectsListBindingNavigator.DeleteItem.Enabled =
+                Properties.Settings.Default.AllowCascadeDelete;
+
+            CustomTabControl.GroupTeacherComponent.teacherListBindingNavigator.DeleteItem.Enabled =
+                Properties.Settings.Default.AllowCascadeDelete;
+
+            CustomTabControl.GroupViewSubhectComponent.subjectListBindingNavigator.DeleteItem.Enabled =
+                Properties.Settings.Default.AllowCascadeDelete;
+
+            #endregion
+
+
+            #region AllowAddNew
+            CustomTabControl.GroupTeacherSubj.teachersSubjectsListBindingNavigator.AddNewItem.Enabled =
+                Settings.Default.AllowReferenceToReferenceRelation;
+
+            #endregion
+            
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            customComboControl1.Setting = Properties.Settings.Default;
+            CustomTabControl.Setting = Settings.Default;
         }
     }
 }

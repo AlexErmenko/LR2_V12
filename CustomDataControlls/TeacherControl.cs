@@ -21,12 +21,10 @@ namespace InstituteDepartment.UI.CustomDataControlls
 
             dataGridViewTextBoxColumn6.ValueMember = "Id";
             dataGridViewTextBoxColumn6.DisplayMember = "Name";
-
         }
 
         private void TeacherListDataGridView_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {
-
         }
     }
 }

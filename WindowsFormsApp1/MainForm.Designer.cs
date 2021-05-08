@@ -31,7 +31,7 @@ namespace WindowsFormsApp1
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.налаштуванняToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.customComboControl1 = new InstituteDepartment.UI.CustomDataControlls.CustomComboControl();
+            this.CustomTabControl = new InstituteDepartment.UI.CustomDataControlls.CustomComboControl();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,20 +53,21 @@ namespace WindowsFormsApp1
             this.налаштуванняToolStripMenuItem.Text = "Налаштування";
             this.налаштуванняToolStripMenuItem.Click += new System.EventHandler(this.НалаштуванняToolStripMenuItem_Click);
             // 
-            // customComboControl1
+            // CustomTabControl
             // 
-            this.customComboControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.customComboControl1.Location = new System.Drawing.Point(0, 28);
-            this.customComboControl1.Name = "customComboControl1";
-            this.customComboControl1.Size = new System.Drawing.Size(1014, 485);
-            this.customComboControl1.TabIndex = 3;
+            this.CustomTabControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.CustomTabControl.Location = new System.Drawing.Point(0, 28);
+            this.CustomTabControl.Name = "CustomTabControl";
+            this.CustomTabControl.Setting = null;
+            this.CustomTabControl.Size = new System.Drawing.Size(1014, 485);
+            this.CustomTabControl.TabIndex = 3;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1014, 513);
-            this.Controls.Add(this.customComboControl1);
+            this.Controls.Add(this.CustomTabControl);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.MainMenuStrip = this.menuStrip1;
@@ -85,7 +86,7 @@ namespace WindowsFormsApp1
         #endregion
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem налаштуванняToolStripMenuItem;
-        private InstituteDepartment.UI.CustomDataControlls.CustomComboControl customComboControl1;
+        private InstituteDepartment.UI.CustomDataControlls.CustomComboControl CustomTabControl;
     }
 }
 

@@ -49,7 +49,7 @@ namespace WindowsFormsApp1
             // checkBox1
             // 
             this.checkBox1.Checked = global::WindowsFormsApp1.Properties.Settings.Default.AllowReferenceToReferenceRelation;
-            this.checkBox1.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::WindowsFormsApp1.Properties.Settings.Default, "ManagePermission", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
+            this.checkBox1.DataBindings.Add(new System.Windows.Forms.Binding("Checked", global::WindowsFormsApp1.Properties.Settings.Default, "AllowReferenceToReferenceRelation", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged));
             this.checkBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.checkBox1.Location = new System.Drawing.Point(6, -1);
             this.checkBox1.Name = "checkBox1";

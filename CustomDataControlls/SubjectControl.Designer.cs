@@ -33,6 +33,7 @@ namespace InstituteDepartment.UI.CustomDataControlls
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SubjectControl));
             this.subjectListBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.subjectListBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -52,11 +53,10 @@ namespace InstituteDepartment.UI.CustomDataControlls
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.subjectListBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.subjectListBindingNavigator)).BeginInit();
             this.subjectListBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.subjectListDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.subjectListBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.subjectListDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // subjectListBindingNavigator
@@ -92,12 +92,15 @@ namespace InstituteDepartment.UI.CustomDataControlls
             // 
             // bindingNavigatorAddNewItem
             // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
             this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(92, 24);
             this.bindingNavigatorAddNewItem.Text = "Add new";
+            // 
+            // subjectListBindingSource
+            // 
+            this.subjectListBindingSource.DataSource = typeof(InstituteDepartment.Domain.EnumerableTypes.SubjectList);
             // 
             // bindingNavigatorCountItem
             // 
@@ -108,11 +111,10 @@ namespace InstituteDepartment.UI.CustomDataControlls
             // 
             // bindingNavigatorDeleteItem
             // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
             this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(77, 24);
             this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
             // bindingNavigatorMoveFirstItem
@@ -142,7 +144,6 @@ namespace InstituteDepartment.UI.CustomDataControlls
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 27);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -178,11 +179,11 @@ namespace InstituteDepartment.UI.CustomDataControlls
             // 
             // subjectListBindingNavigatorSaveItem
             // 
-            this.subjectListBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.subjectListBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("subjectListBindingNavigatorSaveItem.Image")));
             this.subjectListBindingNavigatorSaveItem.Name = "subjectListBindingNavigatorSaveItem";
-            this.subjectListBindingNavigatorSaveItem.Size = new System.Drawing.Size(29, 24);
+            this.subjectListBindingNavigatorSaveItem.Size = new System.Drawing.Size(100, 24);
             this.subjectListBindingNavigatorSaveItem.Text = "Save Data";
+            this.subjectListBindingNavigatorSaveItem.Click += new System.EventHandler(this.SubjectListBindingNavigatorSaveItem_Click);
             // 
             // subjectListDataGridView
             // 
@@ -258,10 +259,6 @@ namespace InstituteDepartment.UI.CustomDataControlls
             this.dataGridViewTextBoxColumn7.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             // 
-            // subjectListBindingSource
-            // 
-            this.subjectListBindingSource.DataSource = typeof(InstituteDepartment.Domain.EnumerableTypes.SubjectList);
-            // 
             // SubjectControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
@@ -274,8 +271,8 @@ namespace InstituteDepartment.UI.CustomDataControlls
             ((System.ComponentModel.ISupportInitialize)(this.subjectListBindingNavigator)).EndInit();
             this.subjectListBindingNavigator.ResumeLayout(false);
             this.subjectListBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.subjectListDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.subjectListBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.subjectListDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

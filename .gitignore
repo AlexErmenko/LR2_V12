@@ -361,3 +361,6 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/.idea/.idea.LR3.v12.InstituteDepartmentSolution/.idea
+/WindowsFormsApp1/MainUI.csproj.DotSettings
+/WindowsFormsApp1/runsdvui.cmd

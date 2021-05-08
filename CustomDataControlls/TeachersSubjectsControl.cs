@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
 namespace InstituteDepartment.UI.CustomDataControlls
 {
@@ -21,21 +13,16 @@ namespace InstituteDepartment.UI.CustomDataControlls
             dataGridViewTextBoxColumn1.DisplayMember = "TeacherNumber";
 
 
-
             dataGridViewTextBoxColumn2.DisplayMember = "SubjectNumber";
             dataGridViewTextBoxColumn2.ValueMember = "SubjectNumber";
 
 
-
             dataGridViewTextBoxColumn3.DisplayMember = "Name";
             dataGridViewTextBoxColumn3.ValueMember = "Id";
-
-
         }
 
         private void TeachersSubjectsListDataGridView_DataError_1(object sender, DataGridViewDataErrorEventArgs e)
         {
-
         }
     }
 }
