@@ -1,4 +1,6 @@
-﻿using System.Windows.Forms;
+﻿using System.ComponentModel;
+using System.Windows.Forms;
+using InstituteDepartment.Domain.Main;
 
 namespace InstituteDepartment.UI.CustomDataControlls
 {
@@ -8,7 +10,33 @@ namespace InstituteDepartment.UI.CustomDataControlls
         {
             InitializeComponent();
 
+            
+   
 
+
+            teachersSubjectsListBindingSource.ListChanged +=TeachersSubjectsListBindingSourceOnListChanged;
+
+        }
+
+        private void TeachersSubjectsListBindingSourceOnListChanged(object sender, ListChangedEventArgs e)
+        {
+            if (e.ListChangedType == ListChangedType.ItemDeleted)
+            {
+                var current = (TeachersSubjects) teachersSubjectsListBindingSource.DataSource;
+                var teacher = teacherListBindingSource.DataSource as Teacher;
+
+                var idSubject = current.IdSubject;
+                var idTeacher = current.IdTeacher;
+            }
+
+        }
+
+        private void TeachersSubjectsListDataGridView_DataError_1(object sender, DataGridViewDataErrorEventArgs e)
+        {
+        }
+
+        private void TeachersSubjectsControl_Load(object sender, System.EventArgs e)
+        {
             dataGridViewTextBoxColumn1.ValueMember = "TeacherNumber";
             dataGridViewTextBoxColumn1.DisplayMember = "TeacherNumber";
 
@@ -19,10 +47,8 @@ namespace InstituteDepartment.UI.CustomDataControlls
 
             dataGridViewTextBoxColumn3.DisplayMember = "Name";
             dataGridViewTextBoxColumn3.ValueMember = "Id";
-        }
 
-        private void TeachersSubjectsListDataGridView_DataError_1(object sender, DataGridViewDataErrorEventArgs e)
-        {
+            this.teachersSubjectsListBindingSource.Clear();
         }
     }
 }

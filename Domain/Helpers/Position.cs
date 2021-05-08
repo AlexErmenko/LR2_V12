@@ -26,7 +26,7 @@ namespace InstituteDepartment.Domain.Helpers
 
         public override string ToString()
         {
-            return $"{Name}";
+            return $"{nameof(Name)}: {Name}";
         }
     }
 }

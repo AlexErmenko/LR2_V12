@@ -42,24 +42,24 @@ namespace WindowsFormsApp1
             this.налаштуванняToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1014, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1014, 30);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // налаштуванняToolStripMenuItem
             // 
             this.налаштуванняToolStripMenuItem.Name = "налаштуванняToolStripMenuItem";
-            this.налаштуванняToolStripMenuItem.Size = new System.Drawing.Size(125, 24);
+            this.налаштуванняToolStripMenuItem.Size = new System.Drawing.Size(125, 26);
             this.налаштуванняToolStripMenuItem.Text = "Налаштування";
             this.налаштуванняToolStripMenuItem.Click += new System.EventHandler(this.НалаштуванняToolStripMenuItem_Click);
             // 
             // CustomTabControl
             // 
             this.CustomTabControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.CustomTabControl.Location = new System.Drawing.Point(0, 28);
+            this.CustomTabControl.Location = new System.Drawing.Point(0, 30);
             this.CustomTabControl.Name = "CustomTabControl";
             this.CustomTabControl.Setting = null;
-            this.CustomTabControl.Size = new System.Drawing.Size(1014, 485);
+            this.CustomTabControl.Size = new System.Drawing.Size(1014, 483);
             this.CustomTabControl.TabIndex = 3;
             // 
             // MainForm

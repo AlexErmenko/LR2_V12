@@ -43,5 +43,11 @@ namespace InstituteDepartment.Domain.Main
         [DisplayName("Код специальности")] public string SpecialtyCode { get; set; }
         [DisplayName("Название предмета")] public string SubjectName { get; set; }
         [DisplayName("Номер предмета")] public Guid SubjectNumber { get; set; }
+
+        /// <inheritdoc />
+        public override string ToString()
+        {
+            return $"{nameof(CountLabWorksHours)}: {CountLabWorksHours}, {nameof(CountLectureHours)}: {CountLectureHours}, {nameof(CountPracticeWorksHours)}: {CountPracticeWorksHours}, {nameof(SemesterNumber)}: {SemesterNumber}, {nameof(SpecialtyCode)}: {SpecialtyCode}, {nameof(SubjectName)}: {SubjectName}, {nameof(SubjectNumber)}: {SubjectNumber}";
+        }
     }
 }

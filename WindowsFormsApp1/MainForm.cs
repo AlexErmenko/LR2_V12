@@ -9,6 +9,7 @@ namespace WindowsFormsApp1
         public MainForm()
         {
             InitializeComponent();
+            CustomTabControl.Setting = Settings.Default;
         }
 
         private void НалаштуванняToolStripMenuItem_Click(object sender, EventArgs e)
@@ -23,45 +24,59 @@ namespace WindowsFormsApp1
             Refresh();
             CustomTabControl.timeTableBindingSource.ResetBindings(false);
 
-
             #region CascadeDelete
 
             CustomTabControl.GroupTeacherSubj.teachersSubjectsListBindingNavigator.DeleteItem.Enabled =
-                Properties.Settings.Default.AllowCascadeDelete;
+                Settings.Default.AllowCascadeDelete;
 
             CustomTabControl.GroupTeacherComponent.teacherListBindingNavigator.DeleteItem.Enabled =
-                Properties.Settings.Default.AllowCascadeDelete;
+                Settings.Default.AllowCascadeDelete;
 
             CustomTabControl.GroupViewSubhectComponent.subjectListBindingNavigator.DeleteItem.Enabled =
-                Properties.Settings.Default.AllowCascadeDelete;
+                Settings.Default.AllowCascadeDelete;
 
             #endregion
 
 
             #region AllowAddNew
+
             CustomTabControl.GroupTeacherSubj.teachersSubjectsListBindingNavigator.AddNewItem.Enabled =
                 Settings.Default.AllowReferenceToReferenceRelation;
 
+            // CustomTabControl.GroupTeacherSubj.DataBindings.Add(new Binding("A"))
+
             #endregion
-            
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            CustomTabControl.Setting = Settings.Default;
+            #region CascadeDelete
+
+            CustomTabControl.GroupTeacherComponent.teacherListBindingNavigator.DeleteItem.Enabled =
+                Settings.Default.AllowCascadeDelete;
+
+            CustomTabControl.GroupViewSubhectComponent.subjectListBindingNavigator.DeleteItem.Enabled =
+                Settings.Default.AllowCascadeDelete;
+            CustomTabControl.GroupTeacherSubj.teachersSubjectsListBindingNavigator.DeleteItem.Enabled =
+                Settings.Default.AllowCascadeDelete;
+
+            CustomTabControl.GroupTeacherSubj.teachersSubjectsListBindingNavigator.Refresh();
+
+            #endregion
+
+
+            #region AllowAddNew
+
+            CustomTabControl.GroupTeacherSubj.teachersSubjectsListBindingNavigator.AddNewItem.Enabled =
+                Settings.Default.AllowReferenceToReferenceRelation;
+
+            #endregion
+            Refresh();
+            CustomTabControl.GroupTeacherSubj.teachersSubjectsListBindingSource.Clear();
         }
     }
 }
 
 
-//ToDo:  Добавить реализацию вкладки TeacherSubjects.
-//ToDo:  Добавить реализацию списка TeacherSubjectsList.
-//ToDo:  Добавить реализацию привязки Teacher и Subject через Value member TeacherSubjects.
-//ToDo:  Переименовать основную форму.
-
-
-//ToDo:  Проверить ещё раз настройки, нам нужна область видимости User.
-//ToDo:  Проверить ещё раз настройки, они должны сохраняться между сеансами приложения.
-//ToDo:  Реализовать функционал настроек.
 //ToDo:  Реализовать функционал каскадного удаления.
 //ToDo:  Настроить для кнопки Delete свойство Enable в зависимости от того есть ли элементы и вкл.? ли настройка .

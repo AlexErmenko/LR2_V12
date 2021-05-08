@@ -64,5 +64,10 @@ namespace InstituteDepartment.Domain.Main
         {
             return $"{MiddleName} {FirstName?[0]}.{LastName?[0]}.";
         }*/
+        /// <inheritdoc />
+        public override string ToString()
+        {
+            return $"{nameof(TeacherNumber)}: {TeacherNumber}, {nameof(MiddleName)}: {MiddleName}, {nameof(FirstName)}: {FirstName}, {nameof(LastName)}: {LastName}, {nameof(AcademicDegrees)}: {AcademicDegrees}, {nameof(Positions)}: {Positions}, {nameof(CurrentPosition)}: {CurrentPosition}, {nameof(CurrentAcademicDegree)}: {CurrentAcademicDegree}";
+        }
     }
 }

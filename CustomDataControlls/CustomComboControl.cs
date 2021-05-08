@@ -21,19 +21,25 @@ namespace InstituteDepartment.UI.CustomDataControlls
             GroupTeacherComponent.teacherListBindingSource.DataSource = table.TeacherList;
 
 
+
+
             //Связали вместе 
+            
+  
             GroupTeacherSubj
                     .teachersSubjectsListBindingSource
                     .DataSource =
                 table.TeachersSubjects;
 
-            GroupTeacherSubj.teacherListBindingSource.DataSource = table.TeacherList;
+            // GroupTeacherSubj.teacherListBindingSource.DataSource = table.TeacherList;
 
 
-            GroupTeacherSubj.subjectListBindingSource.DataSource = table.SubjectList;
+            // GroupTeacherSubj.subjectListBindingSource.DataSource = table.SubjectList;
+            timeTableBindingSource.DataSource = table;
 
-            //Control -> Binding Source Custom Control -> Data Source = 
-            // TeacherSubjectsComponent.teacherListBindingSource.DataSource = table.TeachersSubjects;
+            this.timeTableBindingSource.ResetBindings(false);
+
+
         }
 
         public ApplicationSettingsBase Setting { get; set; }
@@ -41,6 +47,10 @@ namespace InstituteDepartment.UI.CustomDataControlls
         private void CustomComboControl_Load(object sender,
             EventArgs e)
         {
+            var applicationSettingsBase = Setting;
+
+
+            this.timeTableBindingSource.Clear();
         }
     }
 }

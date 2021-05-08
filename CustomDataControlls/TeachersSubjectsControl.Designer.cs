@@ -36,7 +36,6 @@ namespace InstituteDepartment.UI.CustomDataControlls
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.teachersSubjectsListBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.teachersSubjectsListBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -49,20 +48,21 @@ namespace InstituteDepartment.UI.CustomDataControlls
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.teachersSubjectsListBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.teachersSubjectsListDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.teacherListBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.subjectListBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.typeOfLessonBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.teachersSubjectsListBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.teachersSubjectsListBindingNavigator)).BeginInit();
             this.teachersSubjectsListBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.teachersSubjectsListBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.teachersSubjectsListDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.teacherListBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.subjectListBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.typeOfLessonBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.teachersSubjectsListBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // teachersSubjectsListBindingNavigator
@@ -92,22 +92,18 @@ namespace InstituteDepartment.UI.CustomDataControlls
             this.teachersSubjectsListBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.teachersSubjectsListBindingNavigator.Name = "teachersSubjectsListBindingNavigator";
             this.teachersSubjectsListBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
+            this.teachersSubjectsListBindingNavigator.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
             this.teachersSubjectsListBindingNavigator.Size = new System.Drawing.Size(616, 27);
             this.teachersSubjectsListBindingNavigator.TabIndex = 0;
             this.teachersSubjectsListBindingNavigator.Text = "bindingNavigator1";
             // 
             // bindingNavigatorAddNewItem
             // 
-            this.bindingNavigatorAddNewItem.Enabled = false;
             this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
             this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(100, 24);
             this.bindingNavigatorAddNewItem.Text = "Добавить";
-            // 
-            // teachersSubjectsListBindingSource
-            // 
-            this.teachersSubjectsListBindingSource.DataSource = typeof(InstituteDepartment.Domain.EnumerableTypes.TeachersSubjectsList);
             // 
             // bindingNavigatorCountItem
             // 
@@ -118,7 +114,6 @@ namespace InstituteDepartment.UI.CustomDataControlls
             // 
             // bindingNavigatorDeleteItem
             // 
-            this.bindingNavigatorDeleteItem.Enabled = false;
             this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
             this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
@@ -152,6 +147,7 @@ namespace InstituteDepartment.UI.CustomDataControlls
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Положение";
             this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 27);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -187,7 +183,6 @@ namespace InstituteDepartment.UI.CustomDataControlls
             // 
             // teachersSubjectsListBindingNavigatorSaveItem
             // 
-            this.teachersSubjectsListBindingNavigatorSaveItem.Enabled = false;
             this.teachersSubjectsListBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("teachersSubjectsListBindingNavigatorSaveItem.Image")));
             this.teachersSubjectsListBindingNavigatorSaveItem.Name = "teachersSubjectsListBindingNavigatorSaveItem";
             this.teachersSubjectsListBindingNavigatorSaveItem.Size = new System.Drawing.Size(164, 24);
@@ -226,6 +221,8 @@ namespace InstituteDepartment.UI.CustomDataControlls
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.teachersSubjectsListDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
+            this.teachersSubjectsListDataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
+            this.teachersSubjectsListDataGridView.GridColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.teachersSubjectsListDataGridView.Location = new System.Drawing.Point(3, 25);
             this.teachersSubjectsListDataGridView.Name = "teachersSubjectsListDataGridView";
             this.teachersSubjectsListDataGridView.ReadOnly = true;
@@ -241,7 +238,23 @@ namespace InstituteDepartment.UI.CustomDataControlls
             this.teachersSubjectsListDataGridView.RowTemplate.Height = 24;
             this.teachersSubjectsListDataGridView.Size = new System.Drawing.Size(613, 297);
             this.teachersSubjectsListDataGridView.TabIndex = 1;
+            this.teachersSubjectsListDataGridView.VirtualMode = true;
             this.teachersSubjectsListDataGridView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.TeachersSubjectsListDataGridView_DataError_1);
+            // 
+            // teacherListBindingSource
+            // 
+            this.teacherListBindingSource.DataMember = "TeacherList";
+            this.teacherListBindingSource.DataSource = this.teachersSubjectsListBindingSource;
+            // 
+            // subjectListBindingSource
+            // 
+            this.subjectListBindingSource.DataMember = "SubjectList";
+            this.subjectListBindingSource.DataSource = this.teachersSubjectsListBindingSource;
+            // 
+            // typeOfLessonBindingSource
+            // 
+            this.typeOfLessonBindingSource.DataMember = "TypeOfLesson";
+            this.typeOfLessonBindingSource.DataSource = this.teachersSubjectsListBindingSource;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -254,11 +267,6 @@ namespace InstituteDepartment.UI.CustomDataControlls
             this.dataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
-            // teacherListBindingSource
-            // 
-            this.teacherListBindingSource.DataMember = "TeacherList";
-            this.teacherListBindingSource.DataSource = this.teachersSubjectsListBindingSource;
-            // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "IdSubject";
@@ -269,11 +277,6 @@ namespace InstituteDepartment.UI.CustomDataControlls
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
             this.dataGridViewTextBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // subjectListBindingSource
-            // 
-            this.subjectListBindingSource.DataMember = "SubjectList";
-            this.subjectListBindingSource.DataSource = this.teachersSubjectsListBindingSource;
             // 
             // dataGridViewTextBoxColumn3
             // 
@@ -286,11 +289,6 @@ namespace InstituteDepartment.UI.CustomDataControlls
             this.dataGridViewTextBoxColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewTextBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
-            // typeOfLessonBindingSource
-            // 
-            this.typeOfLessonBindingSource.DataMember = "TypeOfLesson";
-            this.typeOfLessonBindingSource.DataSource = this.teachersSubjectsListBindingSource;
-            // 
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.DataPropertyName = "GroupNumber";
@@ -299,23 +297,28 @@ namespace InstituteDepartment.UI.CustomDataControlls
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
             // 
+            // teachersSubjectsListBindingSource
+            // 
+            this.teachersSubjectsListBindingSource.DataSource = typeof(InstituteDepartment.Domain.EnumerableTypes.TeachersSubjectsList);
+            // 
             // TeachersSubjectsControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.AutoSize = true;
             this.Controls.Add(this.teachersSubjectsListDataGridView);
             this.Controls.Add(this.teachersSubjectsListBindingNavigator);
             this.Name = "TeachersSubjectsControl";
             this.Size = new System.Drawing.Size(616, 335);
+            this.Load += new System.EventHandler(this.TeachersSubjectsControl_Load);
             ((System.ComponentModel.ISupportInitialize)(this.teachersSubjectsListBindingNavigator)).EndInit();
             this.teachersSubjectsListBindingNavigator.ResumeLayout(false);
             this.teachersSubjectsListBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.teachersSubjectsListBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.teachersSubjectsListDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.teacherListBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.subjectListBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.typeOfLessonBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.teachersSubjectsListBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
