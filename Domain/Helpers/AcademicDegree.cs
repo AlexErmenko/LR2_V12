@@ -3,7 +3,6 @@ using System.ComponentModel;
 
 namespace InstituteDepartment.Domain.Helpers
 {
-    [Serializable]
     public class AcademicDegree
     {
         public AcademicDegree()

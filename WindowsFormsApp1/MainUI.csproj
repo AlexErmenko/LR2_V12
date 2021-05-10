@@ -128,6 +128,10 @@
       <Project>{4f9a680c-974a-45d3-9051-069ddb5b5368}</Project>
       <Name>CustomDataControlls</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Domain\Domain.csproj">
+      <Project>{0A2B9923-92E7-438C-B07F-C480AC5AEB6E}</Project>
+      <Name>Domain</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.8">

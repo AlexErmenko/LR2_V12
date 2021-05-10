@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Configuration;
 using System.Windows.Forms;
 using InstituteDepartment.Domain.EnumerableTypes;
@@ -10,9 +11,7 @@ namespace InstituteDepartment.UI.CustomDataControlls
         public CustomComboControl()
         {
             InitializeComponent();
-
             var table = new TimeTable();
-
 
             //Привязали предметы
             GroupViewSubhectComponent.subjectListBindingSource.DataSource = table.SubjectList;
@@ -20,26 +19,22 @@ namespace InstituteDepartment.UI.CustomDataControlls
             //Привязали препода
             GroupTeacherComponent.teacherListBindingSource.DataSource = table.TeacherList;
 
-
-
-
             //Связали вместе 
-            
-  
-            GroupTeacherSubj
-                    .teachersSubjectsListBindingSource
+            GroupTeacherSubj.teachersSubjectsListBindingSource
                     .DataSource =
                 table.TeachersSubjects;
+            GroupTeacherSubj.teachersSubjectsListBindingSource.ListChanged += TeachersSubjectsListBindingSource_ListChanged;
+            GroupTeacherSubj.teacherListBindingSource.DataSource = table.TeacherList;
 
-            // GroupTeacherSubj.teacherListBindingSource.DataSource = table.TeacherList;
 
-
-            // GroupTeacherSubj.subjectListBindingSource.DataSource = table.SubjectList;
+            GroupTeacherSubj.subjectListBindingSource.DataSource = table.SubjectList;
             timeTableBindingSource.DataSource = table;
 
             this.timeTableBindingSource.ResetBindings(false);
+        }
 
-
+        private void TeachersSubjectsListBindingSource_ListChanged(object sender, System.ComponentModel.ListChangedEventArgs e)
+        {
         }
 
         public ApplicationSettingsBase Setting { get; set; }
@@ -51,6 +46,33 @@ namespace InstituteDepartment.UI.CustomDataControlls
 
 
             this.timeTableBindingSource.Clear();
+
+
+            timeTableBindingSource.PositionChanged += TimeTableBindingSource_PositionChanged
+                ;
+        }
+
+        private void TimeTableBindingSource_PositionChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(GroupTeacherSubj.valuemember1))
+            {
+                
+            }
+
+        }
+
+        private void TabControl_Selected(object sender,
+            TabControlEventArgs e)
+        {
+            if (e.TabPage == tabPage3)
+            {
+                GroupTeacherSubj.teachersSubjectsListBindingNavigator.DeleteItem.Enabled =
+                    (bool) Setting["AllowCascadeDelete"];
+
+
+                GroupTeacherSubj.teachersSubjectsListBindingNavigator.AddNewItem.Enabled =
+                    (bool) Setting["AllowReferenceToReferenceRelation"];
+            }
         }
     }
 }

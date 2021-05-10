@@ -21,6 +21,8 @@ namespace InstituteDepartment.UI.CustomDataControlls
 
             dataGridViewTextBoxColumn6.ValueMember = "Id";
             dataGridViewTextBoxColumn6.DisplayMember = "Name";
+            dataGridViewTextBoxColumn6.DataSource = this.positionsBindingSource;
+
         }
 
         private void TeacherListDataGridView_DataError(object sender, DataGridViewDataErrorEventArgs e)

@@ -3,8 +3,8 @@ using System.ComponentModel;
 
 namespace InstituteDepartment.Domain.Helpers
 {
-    [Serializable]
-    public class Position
+    
+    public class Position 
     {
         public int Id { get; set; }
         

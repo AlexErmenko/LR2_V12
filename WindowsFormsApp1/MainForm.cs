@@ -26,14 +26,14 @@ namespace WindowsFormsApp1
 
             #region CascadeDelete
 
-            CustomTabControl.GroupTeacherSubj.teachersSubjectsListBindingNavigator.DeleteItem.Enabled =
+            CustomTabControl.GroupTeacherComponent.teacherListBindingNavigator.DeleteItem.Enabled =
                 Settings.Default.AllowCascadeDelete;
 
             CustomTabControl.GroupTeacherComponent.teacherListBindingNavigator.DeleteItem.Enabled =
                 Settings.Default.AllowCascadeDelete;
 
             CustomTabControl.GroupViewSubhectComponent.subjectListBindingNavigator.DeleteItem.Enabled =
-                Settings.Default.AllowCascadeDelete;
+                Settings.Default.AllowCascadeDelete && this.CustomTabControl.GroupTeacherSubj.teachersSubjectsListBindingSource.Count > 0;
 
             #endregion
 
@@ -41,9 +41,8 @@ namespace WindowsFormsApp1
             #region AllowAddNew
 
             CustomTabControl.GroupTeacherSubj.teachersSubjectsListBindingNavigator.AddNewItem.Enabled =
-                Settings.Default.AllowReferenceToReferenceRelation;
+                Settings.Default.AllowReferenceToReferenceRelation && (this.CustomTabControl.GroupTeacherSubj.subjectListBindingSource.Count > 0 && this.CustomTabControl.GroupTeacherSubj.teacherListBindingSource.Count > 0);
 
-            // CustomTabControl.GroupTeacherSubj.DataBindings.Add(new Binding("A"))
 
             #endregion
         }
@@ -58,7 +57,7 @@ namespace WindowsFormsApp1
             CustomTabControl.GroupViewSubhectComponent.subjectListBindingNavigator.DeleteItem.Enabled =
                 Settings.Default.AllowCascadeDelete;
             CustomTabControl.GroupTeacherSubj.teachersSubjectsListBindingNavigator.DeleteItem.Enabled =
-                Settings.Default.AllowCascadeDelete;
+                Settings.Default.AllowCascadeDelete && this.CustomTabControl.GroupTeacherSubj.teachersSubjectsListBindingSource.Count > 0;
 
             CustomTabControl.GroupTeacherSubj.teachersSubjectsListBindingNavigator.Refresh();
 
@@ -68,7 +67,7 @@ namespace WindowsFormsApp1
             #region AllowAddNew
 
             CustomTabControl.GroupTeacherSubj.teachersSubjectsListBindingNavigator.AddNewItem.Enabled =
-                Settings.Default.AllowReferenceToReferenceRelation;
+                Settings.Default.AllowReferenceToReferenceRelation && (this.CustomTabControl.GroupTeacherSubj.subjectListBindingSource.Count > 0 && this.CustomTabControl.GroupTeacherSubj.teacherListBindingSource.Count > 0);
 
             #endregion
             Refresh();

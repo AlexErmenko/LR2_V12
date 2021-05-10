@@ -31,11 +31,12 @@ namespace InstituteDepartment.UI.CustomDataControlls
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TeachersSubjectsControl));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.teachersSubjectsListBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.teachersSubjectsListBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -48,21 +49,20 @@ namespace InstituteDepartment.UI.CustomDataControlls
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.teachersSubjectsListBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.teachersSubjectsListDataGridView = new System.Windows.Forms.DataGridView();
-            this.teacherListBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.subjectListBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.typeOfLessonBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.teacherListBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.subjectListBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.typeOfLessonBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.teachersSubjectsListBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.teachersSubjectsListBindingNavigator)).BeginInit();
             this.teachersSubjectsListBindingNavigator.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.teachersSubjectsListBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.teachersSubjectsListDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.teacherListBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.subjectListBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.typeOfLessonBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.teachersSubjectsListBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // teachersSubjectsListBindingNavigator
@@ -92,7 +92,7 @@ namespace InstituteDepartment.UI.CustomDataControlls
             this.teachersSubjectsListBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.teachersSubjectsListBindingNavigator.Name = "teachersSubjectsListBindingNavigator";
             this.teachersSubjectsListBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.teachersSubjectsListBindingNavigator.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
+            this.teachersSubjectsListBindingNavigator.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
             this.teachersSubjectsListBindingNavigator.Size = new System.Drawing.Size(616, 27);
             this.teachersSubjectsListBindingNavigator.TabIndex = 0;
             this.teachersSubjectsListBindingNavigator.Text = "bindingNavigator1";
@@ -105,6 +105,11 @@ namespace InstituteDepartment.UI.CustomDataControlls
             this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(100, 24);
             this.bindingNavigatorAddNewItem.Text = "Добавить";
             // 
+            // teachersSubjectsListBindingSource
+            // 
+            this.teachersSubjectsListBindingSource.DataSource = typeof(InstituteDepartment.Domain.EnumerableTypes.TeachersSubjectsList);
+            this.teachersSubjectsListBindingSource.PositionChanged += new System.EventHandler(this.TeachersSubjectsListBindingSource_PositionChanged);
+            // 
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
@@ -115,10 +120,12 @@ namespace InstituteDepartment.UI.CustomDataControlls
             // bindingNavigatorDeleteItem
             // 
             this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.MergeAction = System.Windows.Forms.MergeAction.Remove;
             this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(89, 24);
             this.bindingNavigatorDeleteItem.Text = "Удалить";
+            this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.BindingNavigatorDeleteItem_Click);
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -147,7 +154,6 @@ namespace InstituteDepartment.UI.CustomDataControlls
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Положение";
             this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 27);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -198,14 +204,14 @@ namespace InstituteDepartment.UI.CustomDataControlls
             this.teachersSubjectsListDataGridView.AutoGenerateColumns = false;
             this.teachersSubjectsListDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.teachersSubjectsListDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.teachersSubjectsListDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.teachersSubjectsListDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.teachersSubjectsListDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.teachersSubjectsListDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -213,48 +219,32 @@ namespace InstituteDepartment.UI.CustomDataControlls
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4});
             this.teachersSubjectsListDataGridView.DataSource = this.teachersSubjectsListBindingSource;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.teachersSubjectsListDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.teachersSubjectsListDataGridView.DefaultCellStyle = dataGridViewCellStyle8;
             this.teachersSubjectsListDataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.teachersSubjectsListDataGridView.GridColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.teachersSubjectsListDataGridView.Location = new System.Drawing.Point(3, 25);
+            this.teachersSubjectsListDataGridView.Location = new System.Drawing.Point(3, 42);
             this.teachersSubjectsListDataGridView.Name = "teachersSubjectsListDataGridView";
-            this.teachersSubjectsListDataGridView.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.teachersSubjectsListDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.teachersSubjectsListDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.teachersSubjectsListDataGridView.RowHeadersWidth = 51;
             this.teachersSubjectsListDataGridView.RowTemplate.Height = 24;
-            this.teachersSubjectsListDataGridView.Size = new System.Drawing.Size(613, 297);
+            this.teachersSubjectsListDataGridView.Size = new System.Drawing.Size(613, 280);
             this.teachersSubjectsListDataGridView.TabIndex = 1;
             this.teachersSubjectsListDataGridView.VirtualMode = true;
             this.teachersSubjectsListDataGridView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.TeachersSubjectsListDataGridView_DataError_1);
-            // 
-            // teacherListBindingSource
-            // 
-            this.teacherListBindingSource.DataMember = "TeacherList";
-            this.teacherListBindingSource.DataSource = this.teachersSubjectsListBindingSource;
-            // 
-            // subjectListBindingSource
-            // 
-            this.subjectListBindingSource.DataMember = "SubjectList";
-            this.subjectListBindingSource.DataSource = this.teachersSubjectsListBindingSource;
-            // 
-            // typeOfLessonBindingSource
-            // 
-            this.typeOfLessonBindingSource.DataMember = "TypeOfLesson";
-            this.typeOfLessonBindingSource.DataSource = this.teachersSubjectsListBindingSource;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -263,9 +253,13 @@ namespace InstituteDepartment.UI.CustomDataControlls
             this.dataGridViewTextBoxColumn1.HeaderText = "Преподаватель";
             this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
             this.dataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // teacherListBindingSource
+            // 
+            this.teacherListBindingSource.DataMember = "TeacherList";
+            this.teacherListBindingSource.DataSource = this.teachersSubjectsListBindingSource;
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -274,9 +268,13 @@ namespace InstituteDepartment.UI.CustomDataControlls
             this.dataGridViewTextBoxColumn2.HeaderText = "Предмет";
             this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
             this.dataGridViewTextBoxColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // subjectListBindingSource
+            // 
+            this.subjectListBindingSource.DataMember = "SubjectList";
+            this.subjectListBindingSource.DataSource = this.teachersSubjectsListBindingSource;
             // 
             // dataGridViewTextBoxColumn3
             // 
@@ -285,9 +283,13 @@ namespace InstituteDepartment.UI.CustomDataControlls
             this.dataGridViewTextBoxColumn3.HeaderText = "Тип занятия";
             this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
             this.dataGridViewTextBoxColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewTextBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // typeOfLessonBindingSource
+            // 
+            this.typeOfLessonBindingSource.DataMember = "TypeOfLesson";
+            this.typeOfLessonBindingSource.DataSource = this.teachersSubjectsListBindingSource;
             // 
             // dataGridViewTextBoxColumn4
             // 
@@ -295,11 +297,6 @@ namespace InstituteDepartment.UI.CustomDataControlls
             this.dataGridViewTextBoxColumn4.HeaderText = "Номер группы";
             this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            // 
-            // teachersSubjectsListBindingSource
-            // 
-            this.teachersSubjectsListBindingSource.DataSource = typeof(InstituteDepartment.Domain.EnumerableTypes.TeachersSubjectsList);
             // 
             // TeachersSubjectsControl
             // 
@@ -308,17 +305,18 @@ namespace InstituteDepartment.UI.CustomDataControlls
             this.AutoSize = true;
             this.Controls.Add(this.teachersSubjectsListDataGridView);
             this.Controls.Add(this.teachersSubjectsListBindingNavigator);
+            this.DoubleBuffered = true;
             this.Name = "TeachersSubjectsControl";
             this.Size = new System.Drawing.Size(616, 335);
             this.Load += new System.EventHandler(this.TeachersSubjectsControl_Load);
             ((System.ComponentModel.ISupportInitialize)(this.teachersSubjectsListBindingNavigator)).EndInit();
             this.teachersSubjectsListBindingNavigator.ResumeLayout(false);
             this.teachersSubjectsListBindingNavigator.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.teachersSubjectsListBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.teachersSubjectsListDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.teacherListBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.subjectListBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.typeOfLessonBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.teachersSubjectsListBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -327,7 +325,6 @@ namespace InstituteDepartment.UI.CustomDataControlls
         #endregion
         private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
@@ -347,5 +344,6 @@ namespace InstituteDepartment.UI.CustomDataControlls
         private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.BindingSource typeOfLessonBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        public System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
     }
 }

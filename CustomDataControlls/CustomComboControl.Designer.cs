@@ -58,6 +58,7 @@ namespace InstituteDepartment.UI.CustomDataControlls
             this.TabControl.SelectedIndex = 0;
             this.TabControl.Size = new System.Drawing.Size(806, 357);
             this.TabControl.TabIndex = 0;
+            this.TabControl.Selected += new System.Windows.Forms.TabControlEventHandler(this.TabControl_Selected);
             // 
             // tabPage1
             // 

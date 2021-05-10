@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using InstituteDepartment.Domain.EnumerableTypes;
 
 namespace InstituteDepartment.UI.CustomDataControlls
 {
@@ -12,6 +13,7 @@ namespace InstituteDepartment.UI.CustomDataControlls
 
         private void SubjectListBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
+            this.subjectListBindingSource.EndEdit();
         }
     }
 }
